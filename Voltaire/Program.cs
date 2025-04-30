@@ -90,33 +90,33 @@ namespace Voltaire
             _interactionModules = await _interactions.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
             _interactions.SlashCommandExecuted += SlashCommandExecuted;
             _client.InteractionCreated += HandleInteraction;
-            _client.MessageCommandExecuted += Modules.MessageCommand.MessageCommandHandler;
         }
 
         private async Task RegisterCommands(DiscordSocketClient client)
         {
-            var globalMessageCommand = new MessageCommandBuilder();
-            globalMessageCommand.WithName("Create Thread Anonymously");
-
             if (client.ShardId != 0) return;
             if (LoadConfig.Instance.config["dev_server"] != null) {
-                // await _interactions.AddModulesGloballyAsync(true, new Discord.Interactions.ModuleInfo[] {});
                 var guild = client.Guilds.First(x => x.Id.ToString() == LoadConfig.Instance.config["dev_server"]);
-                await _interactions.AddModulesToGuildAsync(
+                Console.WriteLine($"Registering commands for {guild.Name}");
+                var result = await _interactions.AddModulesToGuildAsync(
                     guild,
                     true,
                     _interactionModules.ToArray()
                 );
-                await guild.BulkOverwriteApplicationCommandAsync(new ApplicationCommandProperties[]
+                foreach (var module in _interactionModules)
                 {
-                    globalMessageCommand.Build()
-                });
+                    Console.WriteLine($"Module: {module.Name}");
+                    foreach (var command in module.SlashCommands)
+                    {
+                        Console.WriteLine($"Command: {command.Name}");
+                    }
+                }
+                foreach (var res in result)
+                {
+                    Console.WriteLine(res.Name);
+                }
                 return;
             }
-            await client.BulkOverwriteGlobalApplicationCommandsAsync(new ApplicationCommandProperties[]
-            {
-                globalMessageCommand.Build()
-            });
             await _interactions.AddModulesGloballyAsync(true, _interactionModules.ToArray());
         }
 

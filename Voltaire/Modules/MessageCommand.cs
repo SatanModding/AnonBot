@@ -3,16 +3,20 @@ using Discord.Interactions;
 using System.Linq;
 using Discord.WebSocket;
 using System;
+using Discord;
 
 namespace Voltaire.Modules
 {
-  public static class MessageCommand
+  public class MessageCommand : InteractionsBase
   {
-      public async static Task MessageCommandHandler(SocketMessageCommand arg)
+      public MessageCommand(DataBase database): base(database) {}
+
+      [MessageCommand("Create Thread Anonymously")]
+      public async Task MessageCommandHandler(IMessage msg)
       {
-          var channel = arg.Channel as Discord.ITextChannel;
-          await channel.CreateThreadAsync("test", message: arg.Data.Message);
-          await arg.RespondAsync("Thread Created!", ephemeral: true);
+          var channel = msg.Channel as Discord.ITextChannel;
+          await channel.CreateThreadAsync("voltaire thread", message: msg);
+          await RespondAsync("Thread Created!", ephemeral: true);
       }
   }
 }

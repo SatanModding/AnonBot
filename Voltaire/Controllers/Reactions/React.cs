@@ -12,18 +12,10 @@ namespace Voltaire.Controllers.Reactions
         {
             var guildList = Send.GuildList(context);
 
-            var task = await Task.WhenAll(guildList.SelectMany(x => x.TextChannels).Select(async x => {
-                try {
-                    var message = await x.GetMessageAsync(messageId);
-                    return message;
-                } catch {
-                    return null;
-                }
-            }));
-
-            var r = task.Where(x => x != null);
-
-            if (r.Count() == 0) {
+            Discord.IMessage message;
+            try {
+                message = await context.Channel.GetMessageAsync(messageId);
+            } catch {
                 await Send.SendErrorWithDeleteReaction(context, "message not found");
                 return;
             }
@@ -31,7 +23,7 @@ namespace Voltaire.Controllers.Reactions
             // test for simple emoji (😃)
             try {
                 var d = new Discord.Emoji(emoji);
-                await r.First().AddReactionAsync(d);
+                await message.AddReactionAsync(d);
                 await Send.SendSentEmoteIfCommand(context);
                 return;
             } catch (Discord.Net.HttpException) {}
@@ -41,7 +33,7 @@ namespace Voltaire.Controllers.Reactions
                 emoji, StringComparison.OrdinalIgnoreCase) != -1);
 
             if (emote != null) {
-                await r.First().AddReactionAsync(emote);
+                await message.AddReactionAsync(emote);
                 await Send.SendSentEmoteIfCommand(context);
             } else {
                 await Send.SendErrorWithDeleteReaction(context, "Emoji not found. To send a custom emote, use the emote's name.");

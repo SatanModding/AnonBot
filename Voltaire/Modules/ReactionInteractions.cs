@@ -24,7 +24,11 @@ namespace Voltaire.Modules
             await RespondAsync("Problem parsing message Id.", ephemeral: true);
             return;
           }
-          await Controllers.Reactions.React.PerformAsync(new InteractionBasedContext(Context, Responder), messageId, emoji, _database);
+          try {
+            await Controllers.Reactions.React.PerformAsync(new InteractionBasedContext(Context, Responder), messageId, emoji, _database);
+          } catch {
+            await RespondAsync("Problem sending this reaction. If this message persists, please let us know in the support server (https://discord.gg/xyzMyJH)!", ephemeral: true);
+          }
       }
     }
 }
