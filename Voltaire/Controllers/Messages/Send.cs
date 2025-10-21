@@ -16,7 +16,7 @@ namespace Voltaire.Controllers.Messages
             switch (candidateGuilds.Count())
             {
                 case 0:
-                    await SendErrorWithDeleteReaction(context, "It doesn't look like you belong to any servers where Voltaire is installed. Please add Voltaire to your desired server.");
+                    await SendErrorWithDeleteReaction(context, "It doesn't look like you belong to any servers where AnonBot is installed. Please add AnonBot to your desired server.");
                     break;
                 case 1:
                     await SendToGuild.LookupAndSendAsync(candidateGuilds.First(), context, channelName, message, reply, db);
@@ -77,8 +77,8 @@ namespace Voltaire.Controllers.Messages
                         break;
                     case DiscordErrorCode.InsufficientPermissions:
                     case DiscordErrorCode.MissingPermissions:
-                        await SendMessageToContext(context, "Voltaire doesn't have the " +
-                        "permissions required to send this message. Ensure Voltaire can access the channel you are trying to send to, and that it has " +
+                        await SendMessageToContext(context, "AnonBot doesn't have the " +
+                        "permissions required to send this message. Ensure AnonBot can access the channel you are trying to send to, and that it has " +
                         " \"Embed Links\" and \"Use External Emojis\" permission.");
                         break;
                 }
