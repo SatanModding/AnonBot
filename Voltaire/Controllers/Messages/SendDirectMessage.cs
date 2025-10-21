@@ -56,7 +56,7 @@ namespace Voltaire.Controllers.Messages
 
                 if (userGuild == null && requiredRoleList.Any())
                 {
-                    await Send.SendErrorWithDeleteReaction(context, "user found, but you have been banned from using Voltaire on your shared server");
+                    await Send.SendErrorWithDeleteReaction(context, "user found, but you have been banned from using AnonBot on your shared server");
                 }
                 else if (userGuild == null)
                 {

@@ -12,7 +12,7 @@ namespace Voltaire.Controllers.Settings
             var guild = await FindOrCreateGuild.Perform(context.Guild, db);
             guild.AllowedRole = role.Id.ToString();
             await db.SaveChangesAsync();
-            await Send.SendMessageToContext(context, $"{role.Name} is now the only role that can use Voltaire on this server");
+            await Send.SendMessageToContext(context, $"{role.Name} is now the only role that can use AnonBot on this server");
         }
     }
 }

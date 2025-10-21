@@ -11,7 +11,7 @@ namespace Voltaire.Controllers.Settings
             var guild = await FindOrCreateGuild.Perform(context.Guild, db);
             guild.AllowedRole = null;
             await db.SaveChangesAsync();
-            await Send.SendMessageToContext(context, $"All users can now use Voltaire.");
+            await Send.SendMessageToContext(context, $"All users can now use AnonBot.");
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Voltaire.Controllers.Subscriptions
             }
             else
             {
-                await Send.SendMessageToContext(context, "You do not currently have an active Voltaire Pro subscription. To create one, use the" +
+                await Send.SendMessageToContext(context, "You do not currently have an active AnonBot Pro subscription. To create one, use the" +
                     " `/pro` command.");
             }
         }

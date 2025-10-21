@@ -11,7 +11,7 @@ namespace Voltaire.Modules
         public InfoInteractions(DataBase database): base(database) {}
 
 
-        [SlashCommand("volt-help", "get an overview of Voltaire's commands and functionality")]
+        [SlashCommand("volt-help", "get an overview of AnonBot's commands and functionality")]
         public async Task VoltHelp(
             [Summary("private", "show the help dialogue privately")] Boolean? ephemeral = null
         )

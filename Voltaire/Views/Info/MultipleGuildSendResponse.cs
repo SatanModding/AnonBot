@@ -20,8 +20,8 @@ namespace Voltaire.Views.Info
                 {
                     Name = "send_server"
                 },
-                ThumbnailUrl = "https://nminchow.github.io/VoltaireWeb/images/quill.png",
-                Description = "It looks like you belong to multiple servers where Voltaire is installed. Please specify your server using the following command: `send_server (server_name) (channel_name) (message)`\n\n" +
+                ThumbnailUrl = "https://wiki.bg3.community/anonbot.png",
+                Description = "It looks like you belong to multiple servers where AnonBot is installed. Please specify your server using the following command: `send_server (server_name) (channel_name) (message)`\n\n" +
                 "**Servers:**",
                 Color = new Color(111, 111, 111)
             };
