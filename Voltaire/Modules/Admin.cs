@@ -40,7 +40,7 @@ namespace Voltaire.Modules
         }
 
         [Command("permitted_role", RunMode = RunMode.Async)]
-        [Summary("Set the Role Allowed to Use Voltaire")]
+        [Summary("Set the Role Allowed to Use AnonBot")]
         [Preconditions.Administrator]
         public async Task PermittedRole(SocketRole role)
         {
@@ -48,7 +48,7 @@ namespace Voltaire.Modules
         }
 
         [Command("permitted_role all", RunMode = RunMode.Async)]
-        [Summary("Allow All Users to Use Voltaire")]
+        [Summary("Allow All Users to Use AnonBot")]
         [Preconditions.Administrator]
         public async Task PermittedRoleClear()
         {
@@ -97,7 +97,7 @@ namespace Voltaire.Modules
 
         // Require true admin
         [Command("admin_role", RunMode = RunMode.Async)]
-        [Summary("Set the Role Allowed to Configure Voltaire and Ban Users")]
+        [Summary("Set the Role Allowed to Configure AnonBot and Ban Users")]
         [RequireUserPermission(GuildPermission.Administrator)]
         public async Task AdminRole(SocketRole role)
         {

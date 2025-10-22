@@ -261,3 +261,4 @@ __pycache__/
 *.pyc
 appsettings.json
 notes.md
+.vscode/settings.json

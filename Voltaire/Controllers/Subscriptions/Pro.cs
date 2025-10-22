@@ -31,7 +31,8 @@ namespace Voltaire.Controllers.Subscriptions
                 try {
                     await Send.SendMessageToContext(context, view.Item1, embed: view.Item2);
                 } catch (Discord.Net.HttpException e) {
-                    await Send.SendMessageToContext(context, $"Use this URL to upgrade to Volatire Pro: {url}");
+                    await Send.SendMessageToContext(context, $"Premium removed in this version");
+                    // await Send.SendMessageToContext(context, $"Use this URL to upgrade to AnonBot Pro: {url}");
                 }
             }
         }

@@ -17,7 +17,7 @@ namespace Voltaire.Controllers.Messages
             switch (candidateGuilds.Count())
             {
                 case 0:
-                    await Send.SendErrorWithDeleteReaction(context, "No servers with the specified name could be found. The servers must have Voltaire installed and you must be a member of the server.");
+                    await Send.SendErrorWithDeleteReaction(context, "No servers with the specified name could be found. The servers must have AnonBot installed and you must be a member of the server.");
                     break;
                 case 1:
                     await LookupAndSendAsync(candidateGuilds.First(), context, channelName, message, replyable, db);
@@ -30,7 +30,7 @@ namespace Voltaire.Controllers.Messages
                         await LookupAndSendAsync(exactNameMatch, context, channelName, message, replyable, db);
                         return;
                     }
-                    await Send.SendErrorWithDeleteReaction(context, "More than one server with the spcified name was found. Please use a more specific server name.");
+                    await Send.SendErrorWithDeleteReaction(context, "More than one server with the specified name was found. Please use a more specific server name.");
                     break;
             }
         }
@@ -66,13 +66,13 @@ namespace Voltaire.Controllers.Messages
 
             if (PrefixHelper.UserBlocked(context.User.Id, dbGuild))
             {
-                await Send.SendErrorWithDeleteReaction(context, "It appears that you have been banned from using Voltaire on the targeted server. If you think this is an error, contact one of your admins.");
+                await Send.SendErrorWithDeleteReaction(context, "It appears that you have been banned from using AnonBot on the targeted server. If you think this is an error, contact one of your admins.");
                 return;
             }
 
             if(! await IncrementAndCheckMessageLimit.Perform(dbGuild, db))
             {
-                await Send.SendErrorWithDeleteReaction(context, "This server has reached its limit of 50 messages for the month. To lift this limit, ask an admin or moderator to upgrade your server to Voltaire Pro. (This can be done via the `/pro` command.)");
+                await Send.SendErrorWithDeleteReaction(context, "This server has reached its limit of 50 messages for the month. To lift this limit, ask an admin or moderator to upgrade your server to AnonBot Pro. (This can be done via the `/pro` command.)");
                 return;
             }
 

@@ -15,7 +15,7 @@ namespace Voltaire.Modules
       public async Task MessageCommandHandler(IMessage msg)
       {
           var channel = msg.Channel as Discord.ITextChannel;
-          await channel.CreateThreadAsync("voltaire thread", message: msg);
+          await channel.CreateThreadAsync("anonbot thread", message: msg);
           await RespondAsync("Thread Created!", ephemeral: true);
       }
   }

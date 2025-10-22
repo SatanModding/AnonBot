@@ -19,7 +19,7 @@ namespace Voltaire.Views.Info
                 {
                     Name = "Admin Guide"
                 },
-                ThumbnailUrl = "https://nminchow.github.io/VoltaireWeb/images/quill.png",
+                ThumbnailUrl = "https://wiki.bg3.community/anonbot.png",
                 Description = "These commands are only callable by admin users.\n\n" +
                 "Commands should be sent to the bot in a server channel.\n\n" +
                 "**Guild Channel Commands:**",

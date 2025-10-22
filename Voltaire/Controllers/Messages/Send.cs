@@ -73,7 +73,7 @@ namespace Voltaire.Controllers.Messages
                 switch (e.DiscordCode)
                 {
                     case DiscordErrorCode.CannotSendMessageToUser:
-                        await SendMessageToContext(context, "Voltaire has been blocked by this user, or they have DMs dsiabled.");
+                        await SendMessageToContext(context, "AnonBot has been blocked by this user, or they have DMs disabled.");
                         break;
                     case DiscordErrorCode.InsufficientPermissions:
                     case DiscordErrorCode.MissingPermissions:

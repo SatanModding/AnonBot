@@ -8,18 +8,18 @@ namespace Voltaire.Modules
 {
     public class AdminInteractions
     {
-        [Group("volt-admin", "Voltaire admin commands")]
+        [Group("volt-admin", "AnonBot admin commands")]
         public class AdminGroup : InteractionsBase
         {
             public AdminGroup(DataBase database): base(database) {}
 
-            [SlashCommand("settings", "configure Voltaire's general settings")]
+            [SlashCommand("settings", "configure AnonBot's general settings")]
             [Preconditions.AdministratorInteraction]
             public async Task Settings(
                 [Summary("allow-DM", "allow users to anonymously message one another via the bot")] Boolean? allowDM = null,
                 [Summary("use-identifiers", "use a unique (yet anonymous) identifier for users when sending messages")] Boolean? identifiers = null,
                 [Summary("embeds", "make all messages sent via the bot appear as embeds")] Boolean? embeds = null,
-                [Summary("permitted-role", "set the role allowed to use voltaire")] SocketRole role = null
+                [Summary("permitted-role", "set the role allowed to use AnonBot")] SocketRole role = null
             )
             {
                 Func<string, Discord.Embed, Task> SilentResponder = (response, embed) => { return Task.CompletedTask; };
@@ -82,7 +82,7 @@ namespace Voltaire.Modules
                 await Controllers.Settings.Refresh.PerformAsync(new InteractionBasedContext(Context, Responder), _database);
             }
 
-            [SlashCommand("role", "set the admin role Allowed to Configure Voltaire and Ban Users")]
+            [SlashCommand("role", "set the admin role Allowed to Configure AnonBot and Ban Users")]
             [RequireUserPermission(GuildPermission.Administrator)]
             public async Task AdminRole(SocketRole role)
             {

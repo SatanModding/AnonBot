@@ -15,10 +15,10 @@ namespace Voltaire.Views.Info
             {
                 Author = new EmbedAuthorBuilder
                 {
-                    Name = "Voltaire Anonymous Messaging"
+                    Name = "AnonBot Anonymous Messaging"
                 },
                 Description = text,
-                ThumbnailUrl = "https://nminchow.github.io/VoltaireWeb/images/quill.png",
+                ThumbnailUrl = "https://wiki.bg3.community/anonbot.png",
                 Color = new Color(111, 111, 111),
             };
             return new Tuple<string, Embed>("", embed.Build());

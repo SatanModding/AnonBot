@@ -10,14 +10,14 @@ namespace Voltaire.Modules
         public SubscriptionInteractions(DataBase database): base(database) {}
 
 
-        [SlashCommand("pro", "generate a link to upgrade to voltaire pro or get current subscription info")]
+        [SlashCommand("pro", "generate a link to upgrade to AnonBot pro or get current subscription info")]
         [RequireUserPermission(GuildPermission.Administrator)]
         public async Task Pro()
         {
             await Controllers.Subscriptions.Pro.PerformAsync(new InteractionBasedContext(Context, PublicResponder), _database);
         }
 
-        [SlashCommand("pro-cancel", "cancel your voltaire pro subscription")]
+        [SlashCommand("pro-cancel", "cancel your AnonBot pro subscription")]
         [RequireUserPermission(GuildPermission.Administrator)]
         public async Task Cancel()
         {

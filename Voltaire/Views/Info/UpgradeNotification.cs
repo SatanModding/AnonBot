@@ -16,7 +16,7 @@ namespace Voltaire.Views.Info
                 {
                     Name = "Legacy Command Detected"
                 },
-                ThumbnailUrl = "https://nminchow.github.io/VoltaireWeb/images/quill.png",
+                ThumbnailUrl = "https://wiki.bg3.community/anonbot.png",
                 Description = "Due to changes in the discord api, commands sent directly to Voltiare will soon quit functioning. " +
                 "But fear not! New versions of all commands have been implemented via slash " +
                 "commands. To get more info about slash commands, use the `/volt-help` command in a DM with the bot or in your target server.\n\n" +
@@ -43,7 +43,7 @@ namespace Voltaire.Views.Info
                 {
                     Name = "Legacy Command Detected"
                 },
-                ThumbnailUrl = "https://nminchow.github.io/VoltaireWeb/images/quill.png",
+                ThumbnailUrl = "https://wiki.bg3.community/anonbot.png",
                 Description = "Due to changes in the discord api, commands sent directly to Voltiare will soon quit functioning. \n\n" +
                 "To send an anonymous message to a channel, the `/volt` command should be used in the server where that channel resides. " +
                 "The command accepts a `channel` parameter, which will allow you to select a channel, or a `channel-name` parameter which will allow you to " +

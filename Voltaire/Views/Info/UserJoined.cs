@@ -12,7 +12,7 @@ namespace Voltaire.Views.Info
 
         public static Tuple<string, Embed> Response()
         {
-            return new Tuple<string, Embed>("Looks like you just joined a server using Voltaire. Voltaire allows you to send messages to the server anonymously. Try typing: `help` to get rolling.", null);
+            return new Tuple<string, Embed>("Looks like you just joined a server using AnonBot. AnonBot allows you to send messages to the server anonymously. Try typing: `help` to get rolling.", null);
         }
     }
 }

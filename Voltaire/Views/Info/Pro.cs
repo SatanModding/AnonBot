@@ -14,9 +14,9 @@ namespace Voltaire.Views.Info
             {
                 Author = new EmbedAuthorBuilder
                 {
-                    Name = "Upgrade To Voltaire Pro With the Folling URL:"
+                    Name = "Upgrade To AnonBot Pro With the Folling URL:"
                 },
-                ThumbnailUrl = "https://nminchow.github.io/VoltaireWeb/images/quill.png",
+                ThumbnailUrl = "https://wiki.bg3.community/anonbot.png",
                 Description = $"{url}",
                 Color = new Color(111, 111, 111)
             };

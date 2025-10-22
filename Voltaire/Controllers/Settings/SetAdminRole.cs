@@ -14,13 +14,13 @@ namespace Voltaire.Controllers.Settings
 
             if (!EnsureActiveSubscription.Perform(guild, db))
             {
-                await Send.SendMessageToContext(context, "You need an active Voltaire Pro subscription to set an admin role. To get started, use `/pro`");
+                await Send.SendMessageToContext(context, "You need an active AnonBot Pro subscription to set an admin role. To get started, use `/pro`");
                 return;
             }
 
             guild.AdminRole = role.Id.ToString();
             await db.SaveChangesAsync();
-            await Send.SendMessageToContext(context, $"{role.Name} can now configure Voltaire and ban users on this server.");
+            await Send.SendMessageToContext(context, $"{role.Name} can now configure AnonBot and ban users on this server.");
         }
     }
 }
