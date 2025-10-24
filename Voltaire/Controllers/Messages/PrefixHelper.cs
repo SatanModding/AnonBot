@@ -32,7 +32,7 @@ namespace Voltaire.Controllers.Messages
 
         private static string IdentifierString(int identifier)
         {
-            return Math.Abs(identifier).ToString("0000").Substring(0, 4);
+            return Math.Abs(identifier).ToString("0000000000").Substring(0, 10);
         }
 
         private static string Generate(int identifierInt)
